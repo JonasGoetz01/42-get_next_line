@@ -21,24 +21,22 @@ char	*get_next_line(int fd)
 
 	read_status = 1;
 	tmp = malloc(BUFFER_SIZE + 1);
-	while (es existiert kein /n in temp && read_status != 0)
+	while ((ft_strchr(tmp, '\n') == NULL) && read_status != 0)
 	{
-		read von fd nach temp mit BUFFER_SIZE
-		wenn fehler
-			free file_content
-			free temp
-			return 
-		am ende temp nullterminieren
-
-		wenn anzahl der eingelesenen character nicht 0
-			temp mit in file_content
-		
-		tmp freen
-
-		ret = neuer string mit content von file_content bis /n oder /0
-
-		file_content pointer eine zeile weiter schieben
-
-		ret returnen
+		read_status = read(fd, tmp, BUFFER_SIZE);
+		if (read_status == -1)
+		{
+			free(file_content);
+			free(tmp);
+			return (NULL);
+		}
+		tmp[read_status] = '\0';
+		if (read_status != 0)
+			file_content = ft_strjoin(file_content, tmp);
 	}
+	free(tmp);
+	ret = ft_substr(file_content, 0, len_til_end(file_content));
+	file_content = ft_substr(file_content,
+			len_til_end(file_content), ft_strlen(file_content));
+	return (ret);
 }
