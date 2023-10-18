@@ -6,11 +6,35 @@
 /*   By: jgotz <jgotz@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:18:04 by jgotz             #+#    #+#             */
-/*   Updated: 2023/10/13 16:09:53 by jgotz            ###   ########.fr       */
+/*   Updated: 2023/10/17 15:06:20 by jgotz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	char	*ptr;
+
+	ptr = s;
+	while (n > 0)
+	{
+		*ptr = '\0';
+		ptr++;
+		n--;
+	}
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*p;
+
+	p = (void *)malloc(count * size);
+	if (!p)
+		return (NULL);
+	ft_bzero(p, count * size);
+	return (p);
+}
 
 char	*ft_strchr(const char *str, int c)
 {

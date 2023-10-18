@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgotz <jgotz@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 15:14:32 by jgotz             #+#    #+#             */
-/*   Updated: 2023/10/13 16:30:02 by jgotz            ###   ########.fr       */
+/*   Created: 2023/10/18 08:00:17 by jgotz             #+#    #+#             */
+/*   Updated: 2023/10/18 12:50:31 by jgotz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main(void)
 {
-	int fd;
+	int	fd;
 
 	fd = open("test.txt", 2);
 	printf("%s", get_next_line(fd));
