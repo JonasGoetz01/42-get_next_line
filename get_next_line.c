@@ -6,7 +6,7 @@
 /*   By: jgotz <jgotz@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:17:34 by jgotz             #+#    #+#             */
-/*   Updated: 2023/10/23 15:55:11 by jgotz            ###   ########.fr       */
+/*   Updated: 2023/10/23 19:52:38 by jgotz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	*read_file(int fd, char *res)
 		res = ft_free(res, buffer);
 		if (ft_strchr(buffer, '\n') || byte_read == 0)
 			break ;
-		byte_read = read(fd, buffer, BUFFER_SIZE);
+		byte_read = (size_t)read(fd, buffer, BUFFER_SIZE);
 	}
 	free(buffer);
 	if (byte_read <= 0 && res[0] == '\0')
