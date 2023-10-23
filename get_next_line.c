@@ -6,12 +6,15 @@
 /*   By: jgotz <jgotz@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:17:34 by jgotz             #+#    #+#             */
-/*   Updated: 2023/10/23 20:15:25 by jgotz            ###   ########.fr       */
+/*   Updated: 2023/10/23 20:22:53 by jgotz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+/**
+ * Combines the existing buffer and a new buffer into a single string.
+ */
 char	*buff_to_line(char *buffer, char *buf)
 {
 	char	*temp;
@@ -21,7 +24,11 @@ char	*buff_to_line(char *buffer, char *buf)
 	return (temp);
 }
 
-char	*ft_next(char *buffer)
+/**
+ * move pointer to next line and keep everything that
+ * was alredy in the buffer from new line in memory
+ */
+char	*next(char *buffer)
 {
 	int		i;
 	int		j;
@@ -49,6 +56,10 @@ char	*ft_next(char *buffer)
 	return (line);
 }
 
+/**
+
+	* Extracts the content of the buffer until the first newline character ('\n') encountered.
+ */
 char	*get_line(char *buffer)
 {
 	char	*line;
@@ -73,7 +84,10 @@ char	*get_line(char *buffer)
 	return (line);
 }
 
-char	*read_file(int fd, char *res)
+/**
+ * read out file and put into buffer
+ */
+char	*fill_buffer(int fd, char *res)
 {
 	char	*buffer;
 	size_t	byte_read;
@@ -112,11 +126,11 @@ char	*get_next_line(int fd)
 		buffer = NULL;
 		return (NULL);
 	}
-	buffer = read_file(fd, buffer);
+	buffer = fill_buffer(fd, buffer);
 	if (!buffer)
 		return (NULL);
 	line = get_line(buffer);
-	buffer = ft_next(buffer);
+	buffer = next(buffer);
 	return (line);
 }
 
