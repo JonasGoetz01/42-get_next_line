@@ -6,7 +6,7 @@
 /*   By: jgotz <jgotz@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:17:34 by jgotz             #+#    #+#             */
-/*   Updated: 2023/10/23 20:22:53 by jgotz            ###   ########.fr       */
+/*   Updated: 2023/10/23 22:31:20 by jgotz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ char	*next(char *buffer)
 }
 
 /**
-
-	* Extracts the content of the buffer until the first newline character ('\n') encountered.
+	* Extracts the content of the buffer until
+	the first newline character ('\n') encountered.
  */
-char	*get_line(char *buffer)
+char	*get_line_mine(char *buffer)
 {
 	char	*line;
 	int		i;
@@ -129,23 +129,28 @@ char	*get_next_line(int fd)
 	buffer = fill_buffer(fd, buffer);
 	if (!buffer)
 		return (NULL);
-	line = get_line(buffer);
+	line = get_line_mine(buffer);
 	buffer = next(buffer);
 	return (line);
 }
 
-// #include <stdio.h>
+/* #include <stdio.h>
 
-// int	main(void)
-// {
-// 	int	fd;
+int	main(void)
+{
+	int	fd;
 
-// 	fd = open("test.txt", 2);
-// 	// printf("%d", fd);
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	close(fd);
-// 	return (0);
-// }
+	fd = open("test.txt", 2);
+	// printf("%d", fd);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	close(fd);
+	return (0);
+} */
