@@ -6,7 +6,7 @@
 /*   By: jgotz <jgotz@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:15:10 by jgotz             #+#    #+#             */
-/*   Updated: 2023/10/13 16:30:28 by jgotz            ###   ########.fr       */
+/*   Updated: 2023/10/21 11:42:07 by jgotz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-char	*ft_strchr(const char *str, int c);
-char	*ft_strjoin(const char *s1, const char *s2);
-int		len_til_end(char *str);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-size_t	ft_strlen(const char *str);
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-char	*ft_strdup(const char *str);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *string, int searchedChar);
+
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t elementCount, size_t elementSize);
+
+size_t	ft_strlen(const char *theString);
 
 #endif
