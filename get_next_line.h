@@ -6,7 +6,7 @@
 /*   By: jgotz <jgotz@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:15:10 by jgotz             #+#    #+#             */
-/*   Updated: 2023/10/21 11:42:07 by jgotz            ###   ########.fr       */
+/*   Updated: 2023/10/23 20:15:07 by jgotz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *string, int searchedChar);
+char	*ft_strchr(const char *str, int c);
 
 void	ft_bzero(void *s, size_t n);
-void	*ft_calloc(size_t elementCount, size_t elementSize);
+void	*ft_calloc(size_t count, size_t size);
 
-size_t	ft_strlen(const char *theString);
+size_t	ft_strlen(const char *str);
 
 #endif
